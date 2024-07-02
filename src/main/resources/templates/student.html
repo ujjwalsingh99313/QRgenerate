@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Details</title>
+</head>
+<body>
+<h1>Student Details</h1>
+<div th:if="${student != null}">
+    <p>Name: <span th:text="${student.name}"></span></p>
+    <p>Email: <span th:text="${student.email}"></span></p>
+    <img th:src="'/qrcode?rollNo=' + ${student.rollNo}" alt="QR Code">
+</div>
+<div th:if="${student == null}">
+    <p>Student not found.</p>
+</div>
+<a href="/">Back</a>
+</body>
+</html>
